@@ -18,13 +18,13 @@ include_once './layouts/header.php';
                             <option>Rocket</option>
                             <option>Cash</option>
                         </select>
-                        <div class="gender col-6 justify-content-start">
+                        <div  class="gender col-6 justify-content-start">
                             <div class="radio">
-                                <input type="radio" id="male" name="option" value="1">
+                                <input name="gender" type="radio" id="male" name="option" value="1">
                                 <label for="male">Male</label>
                             </div>
                             <div class="radio">
-                                <input type="radio" id="female" name="option" value="2">
+                                <input name="gender" type="radio" id="female" name="option" value="2">
                                 <label for="female">Female</label>
                             </div>
                         </div>

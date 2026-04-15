@@ -1,28 +1,35 @@
 <?php
 session_start();
-    $full_name = $_REQUEST['full_name'];
-    $phone_number = $_REQUEST['phone'];
-    $email = $_REQUEST['mail'];
-    $errors = [];
-if (isset($_REQUEST['full_name'])) {
+$name = $_REQUEST['full_name'];
+$userName = $_REQUEST['userName'];
+$phone = $_REQUEST['phone'];
+$email = $_REQUEST['mail'];
+$password = $_REQUEST['pass'];
+$password = $_REQUEST['pass'];
+$payment = $_REQUEST['payment'];
+$gender = $_REQUEST['gender'];
+$errors = [];
 
-    if (strlen($full_name) < 3) {
-        $errors['full_name_error']  = "Full name must be at least 3 characters long.";
-    }
+if(strlen($name) < 3) {
+    $errors['name_error'] = "Name must contain more than 3 characters";
 }
 
-if (isset($_POST['phone'])) {
-    $phone = preg_replace('/\D/', '', $_POST['phone']);
-
-    if (strlen($phone) < 11) {
-        $errors['phone_number_error'] = "Phone number must be at least 11 digits.";
-    }
+if(strlen($userName) < 4) {
+    $errors['userName_error'] = "Username must contain at least 5 characters";
 }
 
-if(count($errors) > 0) {
-    $_SESSION['form_errors'] = $errors;
-    header("Location: ../index.php");
-} else {
-    echo "DB saved";
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    $errors['email_error'] ="invalid e-mail";
 }
-session_unset();
+
+if(strlen($phone) < 11) {
+    $errors['phone_number_error'] = "Phone Number must contain 11 digits";
+}
+
+if(strlen($password) > 32 || strlen($password) < 8){
+    $errors ['passowrd_error'] = "Password must contain minimum 8 and maximum characters";
+}
+
+if(count($errors) > 0){
+    header('Location: ../index.php');
+}
