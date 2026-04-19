@@ -9,7 +9,7 @@ $regs = mysqli_fetch_all($response, 1);
 ?>
 
 <div class="container mt-5">
-  <h2 class="d-flex justify-content-center mb-5">Basic Bootstrap Table</h2>
+  <h1 class="text-center mb-5">Khali error Ashe 😭😭😭</h1>
   <table class="table">
     <thead>
       <tr>

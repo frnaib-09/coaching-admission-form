@@ -40,16 +40,8 @@ if(count($errors) > 0) {
     $response = mysqli_query($connection, $query);
 
     if($response) {
-        $_SESSION['alert'] = [
-            'type' => 'success',
-            'message' => 'Congratulations! You has been registered.'
-            ];
         header("Location: ../list.php");
     } else {
-        $_SESSION['alert'] = [
-            'type' => 'error',
-            'message' => 'Sorry! Something went wrong.'
-            ];
         header ("Location: ../index.php");
     }
 }
