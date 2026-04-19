@@ -3,7 +3,7 @@
 $dbHost = 'localhost';
 $dbUserName = 'root';
 $dbPassword = '';
-$dbName = 'sms';
+$dbName = 'student_form';
 
 try{
 $connection = mysqli_connect($dbHost, $dbUserName, $dbPassword, $dbName);

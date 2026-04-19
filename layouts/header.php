@@ -20,10 +20,10 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Form</a>
+                            <a class="nav-link active" aria-current="page" href="./index.php">Form</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Student List</a>
+                            <a class="nav-link" href="./list.php">Student List</a>
                         </li>
                         
                     </ul>

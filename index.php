@@ -7,11 +7,21 @@ include_once './layouts/header.php';
             <div class="row">
                 <div class="card w-90">
                     <form action="./controller/validation.php" method="POST">
-                        <input name="full_name" type="text" placeholder="Full Name">
-                        <input name="userName" type="text" placeholder="Username">
-                        <input name="phone" type="tel" placeholder="Enter your phone number">
-                        <input name="mail" type="email" placeholder="Enter your Email">
-                        <input name="pass" type="password" placeholder="Enter your password">
+                        <input name="full_name" type="text" placeholder="Full Name" class="form-control <?= isset($_SESSION['form_errors']['name_error']) ? 'is-invalid' : '' ?>" value="<?= $_SESSION['valid_data']['full_name'] ?? '' ?>">
+                        <span class="text-danger"><?= $_SESSION['form_errors']['name_error'] ?? '' ?></span>
+
+                        <input name="userName" type="text" placeholder="Username" class="form-control <?= isset($_SESSION['form_errors']['userName_error']) ? 'is-invalid' : '' ?>" value="<?= $_SESSION['valid_data']['userName'] ?? '' ?>">
+                        <span class="text-danger"><?= $_SESSION['form_errors']['userName_error'] ?? '' ?></span>
+
+                        <input name="phone" type="tel" placeholder="Enter your phone number" class="form-control <?= isset($_SESSION['form_errors']['phone_number_error']) ? 'is-invalid' : '' ?>" value="<?= $_SESSION['valid_data']['phone'] ?? '' ?>">
+                        <span class="text-danger"><?= $_SESSION['form_errors']['phone_number_error'] ?? '' ?></span>
+
+                        <input name="mail" type="email" placeholder="Enter your Email" class="form-control <?= isset($_SESSION['form_errors']['email_error']) ? 'is-invalid' : '' ?>" value="<?= $_SESSION['valid_data']['mail'] ?? '' ?>">
+                        <span class="text-danger"><?= $_SESSION['form_errors']['email_error'] ?? '' ?></span>
+
+                        <input name="pass" type="password" placeholder="Enter your password" class="form-control <?= isset($_SESSION['form_errors']['passowrd_error']) ? 'is-invalid' : '' ?>" value="<?= $_SESSION['valid_data']['pass'] ?? '' ?>">
+                        <span class="text-danger"><?= $_SESSION['form_errors']['passowrd_error'] ?? '' ?></span><br>
+
                         <select name="payment">
                             <option>Bkash</option>
                             <option>Nagad</option>
@@ -20,11 +30,11 @@ include_once './layouts/header.php';
                         </select>
                         <div  class="gender col-6 justify-content-start">
                             <div class="radio">
-                                <input name="gender" type="radio" id="male" name="option" value="1">
+                                <input name="gender" type="radio" id="male" value="1">
                                 <label for="male">Male</label>
                             </div>
                             <div class="radio">
-                                <input name="gender" type="radio" id="female" name="option" value="2">
+                                <input name="gender" type="radio" id="female" value="2">
                                 <label for="female">Female</label>
                             </div>
                         </div>
@@ -37,3 +47,6 @@ include_once './layouts/header.php';
 </body>
 
 </html>
+
+<?php
+include_once './layouts/footer.php';
