@@ -9,7 +9,7 @@ $regs = mysqli_fetch_all($response, 1);
 ?>
 
 <div class="container mt-5">
-  <h1 class="text-center mb-5">Khali error Ashe 😭😭😭</h1>
+  <h1 class="text-center mb-5">Student List</h1>
   <table class="table">
     <thead>
       <tr>
@@ -29,13 +29,14 @@ $regs = mysqli_fetch_all($response, 1);
     ?>
         <tbody>
         <tr>
-            <td><?= $reg['$name'] ?></td>
-            <td><?= $reg['$userName'] ?></td>
-            <td><?= $reg['$phone'] ?></td>
-            <td><?= $reg['$email'] ?></td>
-            <td><?= $reg['$password'] ?></td>
-            <td><?= $reg['$payment'] ?></td>
-            <td><?= $reg['$gender'] ?></td>
+            <td class="text-center"><?= $reg['id'] ?></td>
+            <td class="text-center"><?= $reg['name'] ?></td>
+            <td class="text-center"><?= $reg['username'] ?></td>
+            <td class="text-center"><?= $reg['phone'] ?></td>
+            <td class="text-center"><?= $reg['email'] ?></td>
+            <td class="text-center"><?= $reg['password'] ?></td>
+            <td class="text-center"><?= $reg['payment'] ?></td>
+            <td class="text-center"><?= $reg['gender'] ?></td>
         </tr>
         </tbody>
     <?php

@@ -30,11 +30,11 @@ include_once './layouts/header.php';
                         </select>
                         <div  class="gender col-6 justify-content-start">
                             <div class="radio">
-                                <input name="gender" type="radio" id="male" value="1">
+                                <input name="gender" type="radio" id="male" value="Male">
                                 <label for="male">Male</label>
                             </div>
                             <div class="radio">
-                                <input name="gender" type="radio" id="female" value="2">
+                                <input name="gender" type="radio" id="female" value="Female">
                                 <label for="female">Female</label>
                             </div>
                         </div>
